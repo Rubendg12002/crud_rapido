@@ -105,10 +105,10 @@ Resultados
 ## Resultados
 
 ### REGISTRO
-![Formulario de Registro](images/Screenshot 2026-04-25 223807.png)
+![Formulario de Registro](images/registro.png)
 
 ### CRUD
-![CRUD de Productos](images/Screenshot 2026-04-25 223038.png)
+![CRUD de Productos](images/crud.png)
 
 
 La aplicación estará disponible en:
