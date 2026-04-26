@@ -108,7 +108,7 @@ Resultados
 ![Formulario de Registro](images/registro.png)
 
 ### CRUD
-![CRUD de Productos](images/crud.png)
+![CRUD de Productos](images/nuevacrud.png)
 
 
 La aplicación estará disponible en:
