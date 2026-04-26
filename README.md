@@ -102,7 +102,13 @@ Actualiza el cargador de clases de Composer para reconocer nuevos archivos.
 php artisan serve
 
 Resultados 
+## REGISTRO
 
+![Formulario de Registro](images/Screenshot 2026-04-25 223807.png)
+
+## CRUD
+
+![CRUD de Productos](images/Screenshot 2026-04-25 223038.png)
 
 
 La aplicación estará disponible en:
