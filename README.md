@@ -1,59 +1,119 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Universidad Tecnológica de Panamá
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Facultad de Ingeniería de Sistemas Computacionales
 
-## About Laravel
+Fecha de Ejecución: 23 de abril de 2026
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Objetivos
+Implementar un sistema CRUD utilizando Laravel para la gestión de datos.
+Aplicar la arquitectura MVC (Modelo-Vista-Controlador) en el desarrollo del proyecto.
+Utilizar las herramientas proporcionadas por Laravel para generar modelos, migraciones y controladores de manera eficiente.
+Introducción
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laravel es un framework de desarrollo web basado en PHP que permite crear aplicaciones modernas y organizadas siguiendo el patrón MVC, facilitando la separación de responsabilidades y la mantenibilidad del código.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+En este laboratorio, se desarrolló un sistema CRUD para la gestión de datos, aplicando las prácticas recomendadas de Laravel. Durante el proceso, se configuró el entorno de desarrollo, se instalaron las dependencias necesarias y se implementaron funcionalidades para crear, leer, actualizar y eliminar registros de forma efectiva.
 
-## Learning Laravel
+Requisitos Previos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Para ejecutar correctamente el laboratorio, se requiere contar con el siguiente ecosistema de desarrollo:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+PHP 8.0 o superior
+Composer (última versión estable)
+Laravel (framework PHP)
+Servidor web: Apache
+Base de datos: MySQL
+Entorno de desarrollo local: XAMPP o WampServer
+Editor de código: Visual Studio Code
+Node.js y NPM (para gestión de dependencias del frontend)
+Sistema operativo: Windows 10 / 11
+Instalación y Configuración del Proyecto
 
-## Laravel Sponsors
+A continuación, se detallan los pasos para instalar y ejecutar el proyecto Laravel desde cero:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clonar o crear el proyecto
 
-### Premium Partners
+Si el proyecto ya se encuentra en un repositorio:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+git clone URL_DEL_REPOSITORIO
+cd login-app
 
-## Contributing
+Si se crea desde cero:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+laravel new login-app
+2. Instalación de dependencias
+composer install
+npm install
+npm run dev
+composer install: descarga las librerías del backend definidas en composer.json en la carpeta vendor/.
+npm install: instala dependencias del frontend.
+npm run dev: compila los archivos CSS y JavaScript.
+3. Configuración del archivo .env
 
-## Code of Conduct
+Laravel utiliza el archivo .env para manejar variables de entorno:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+cp .env.example .env
 
-## Security Vulnerabilities
+Configurar la base de datos:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+DB_DATABASE=crud_rapido
+DB_USERNAME=root
+DB_PASSWORD=
+en mi caso no uso 
+Este paso es fundamental para la correcta conexión entre Laravel y MySQL.
 
-## License
+Comandos Utilizados
+1. Limpieza de configuración
+php artisan config:clear
+php artisan cache:clear
+php artisan config:cache
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Permite limpiar y actualizar la configuración del proyecto.
+
+2. Creación del modelo y migración
+php artisan make:model Product -m
+
+Crea el modelo Product junto con la migración correspondiente para la tabla products.
+
+3. Ejecución de migraciones
+php artisan migrate
+php artisan migrate:fresh
+migrate: crea las tablas definidas en las migraciones.
+migrate:fresh: elimina todas las tablas existentes y las vuelve a crear desde cero.
+4. Generación del CRUD
+composer require ibex/crud-generator --dev
+php artisan vendor:publish --tag=crud
+php artisan make:crud products
+
+Estos comandos permiten generar automáticamente los componentes del CRUD: modelos, controladores, vistas y rutas.
+
+5. Implementación de la interfaz (Laravel UI)
+composer require laravel/ui --dev
+php artisan ui bootstrap
+
+Genera vistas básicas con Bootstrap para la interfaz de usuario.
+
+6. Actualización del autoload
+composer dump-autoload
+
+Actualiza el cargador de clases de Composer para reconocer nuevos archivos.
+
+7. Ejecución del servidor
+php artisan serve
+
+Resultados 
+
+
+
+La aplicación estará disponible en:
+
+http://127.0.0.1:8000/ → Página de login
+http://127.0.0.1:8000/products → CRUD generado
+Referencias
+Laravel. (2026). Documentación oficial de Laravel. Recuperado de https://laravel.com/docs
+Informática DP. (2022, 20 de enero). CRUD RÁPIDO - LARAVEL [Video]. YouTube. Recuperado de https://www.youtube.com/watch?v=j5baJsM_Adc
+Información del Estudiante
+Nombre: Ruben Dominguez
+Correo: Ruben.Dominguez1@utp.ac.pa
+Curso: Desarrollo de Software VII
+Instructor: Irina Fong
